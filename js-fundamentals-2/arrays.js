@@ -27,3 +27,10 @@ function age(birthYear) {
 
 const ages = [age(birthYears[0]), age(birthYears[1]), age(birthYears[2])];
 console.log(ages); //OUTPUT: [37, 27, 17]
+
+/* NOTE JS arrays need not be Homogeneous
+i.e., elements of different data types may be stored in the same array
+*/
+
+let collegeDetails = ["Indiana University Bloomington", 1820];
+console.log(`${collegeDetails[0]} was established in ${collegeDetails[1]}`);
