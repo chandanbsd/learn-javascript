@@ -25,6 +25,7 @@ switch (day) {
   default:
     console.log("Not a valid date");
 }
+// the case comparison is a strict equality comparison. i.e case ‘happy’ is actually switch variable === ‘happy’
 
 if (day === "Monday") {
   console.log("It's the start of the week");

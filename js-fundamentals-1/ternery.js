@@ -11,3 +11,5 @@ if (age >= 18) {
 }
 
 console.log(res2);
+
+//Ternary operator can be thought of as a shorthand for if-else statement

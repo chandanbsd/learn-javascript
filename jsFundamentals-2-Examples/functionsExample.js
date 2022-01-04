@@ -29,14 +29,15 @@ const calcAverage = (score1, score2, score3) => {
 };
 
 function checkWinner(avg1, avg2) {
-  if (avg1 > avg2 * 2) {
+  if (avg1 >= avg2 * 2) {
     console.log(`Dolphines win (${avg1} vs. ${avg2})`);
-  } else {
+  } else if (avg1 < avg2 * 2) {
     console.log(`Koalas win (${avg1} vs. ${avg2})`);
+  } else {
+    console.log(`Game Drawn (${avg1} vs. ${avg2})`);
   }
 }
 
 const avgDolphines = calcAverage(44, 23, 71);
 const avgKoalas = calcAverage(65, 54, 94);
-
 checkWinner(avgDolphines, avgKoalas);

@@ -16,3 +16,5 @@ if (!a) {
 if (!b) {
   console.log("b is false");
 }
+
+//! takes precedence over other operators, so values are ! first and then compared with and, or

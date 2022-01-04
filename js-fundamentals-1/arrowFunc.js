@@ -8,3 +8,8 @@ const yearsUntilRtirement = (birthYear, currentYear) => {
 };
 
 console.log(`Age = ${age(1999)} \n`, yearsUntilRtirement(1999, 2021));
+
+/*
+  > Arrow functions can be thought of as a much more concise version of function expressions.
+  > While it is quiet similar to other forms of function usage, it DOES’NT have access to the ***this*** keyword.
+*/
