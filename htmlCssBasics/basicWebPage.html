@@ -1,0 +1,77 @@
+<!-- NOTE HTML Basics
+    HTML is a shorthand for Hyper Text Markup Language
+    All it does is semantically describes the content of the web page
+-->
+<!-- Let look at the barebone snippet of HTML5-->
+
+<!-- Tells the browser that this is a html document -->
+<!DOCTYPE html>
+
+<!-- NOTE html
+  This denotes the start of the HTML document -->
+<html lang="en">
+  <!-- NOTE head
+    This is the "head" tag. It usually houses the meta, title, link and script tags -->
+  <head>
+    <!-- NOTE meta
+      These meta tags are specific to HTML5 and we don't have to worry about them -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- NOTE title
+      The title tag defined the title of the web page, i.e., the text displayed on the
+    title bar of the web browser -->
+    <title>Document</title>
+  </head>
+
+  <!-- NOTE body
+    The body tag holds content that is actually displayed on the web page -->
+  <body>
+    <!-- NOTE h1
+      The H1 tag is used to write headings. There are 6 levels with 1 being the largest -->
+    <h1>JavaScript is important but so is HTML and CSS</h1>
+
+    <!-- NOTE p
+      The paragraph tag is used to display content that is multiple lines long -->
+    <p>
+      JavaScript is one of the language that powers the world wide wed. HTML and
+      CSS are vital for the development of a webpage. Where JavaScript shines is
+      in the topic of DOM manipulation, i.e., the alerting of the Document
+      Object Model at runtime.
+    </p>
+
+    <!-- NOTE img 
+      Image tag is used to embed images onto the web page.
+    Unlike the tags we previously saw it is a self closing tag and does not require a 
+    seperate closing element-->
+    <img src="jsHtmlCSSLogo.jpeg" alt="JavaScript CSS HTML Logo" />
+
+    <!-- NOTE div
+      The Div tag is a semantic element that generally houses a group of other logically
+    related tags/elements/content.
+  
+    We mainly do this so that they can be easily styled and grouped together-->
+    <div>
+      <h1>This is another heading</h1>
+      This is another paragraph with a
+      <!-- NOTE a
+        anchor tags are used to create hyperlinks -->
+      <a href="www.google.com">link to google.com</a>
+    </div>
+
+    <!-- HTML Forms
+    The form tag is one of the most important html tags to create methods of input to 
+    gather data from the user-->
+    <form>
+      <p>Please fill in this form</p>
+      <!-- NOTE input
+      the input tag is concerned with accepting data from user -->
+      <input type="text" placeholder="Enter name" />
+
+      <!-- NOTE button
+      buttons are the primary means of submitting the data entered by the user -->
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

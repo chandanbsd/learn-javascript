@@ -1,0 +1,81 @@
+/* NOTE * selector
+Some HTML elements have a some predefined properties such as margin, padding etc.
+This object creates issue while designing the web page, therefore we can
+remove the default values of all such property on all elements using the
+universal selector or  *
+*/
+* {
+  /* NOTE Margin
+  Margin is the region outside the CSS Box Model */
+  margin: 0;
+  /* Note Padding
+  Padding is the region between the code and the css box */
+  padding: 0;
+
+  /* NOTE Margins, padding and width are summed up
+  In css by default when create margin, padding etc, the size of these
+  spaces are in addition to (i.e., added to) the actual width of the element/content.
+  To override this behavior we can use the border-box value of box-sizing which
+  ensure that the width is fixed irrespective of our usage of padding, margin etc*/
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(248, 248, 157);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 40px;
+}
+
+img {
+  /* NOTE width/height of image
+    When only the width or the height of the image is specified then the
+    height is computed automatically by preserving the aspect ratio.
+    Same is true for the vice-versa
+*/
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.first {
+  color: red;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+#name-form {
+  background-color: rgb(255, 220, 105);
+  border: 5px solid #444;
+}
+
+a {
+  background-color: aquamarine;
+}
+
+/* NOTE Child Selector
+We can select the child of a particular element as follows
+selector-of-parent selector-of-child
+*/
+
+form p {
+  background-color: greenyellow;
+}
+
+/* NOTE Selecting multiple elements
+We can do so by separating the selector with a comma
+selector1, selector2 */
+
+input,
+button {
+  padding: 10px;
+}
+
+form {
+  padding: 30px;
+}
