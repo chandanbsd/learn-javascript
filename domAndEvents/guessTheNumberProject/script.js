@@ -16,14 +16,34 @@ Therefore JS and DOM manipulation comes into play when a web page is executed in
 
 // Here document is the parent element of the DOM and using that we select the paragraph
 //tag on our web page
-console.log(document.querySelector("p"));
+// console.log(document.querySelector("p"));
 
 //Similarly lets select the  element with the className message
-console.log(document.querySelector(".message"));
+// console.log(document.querySelector(".message"));
 
 //Furthermore we can select the content inside the element
-console.log(document.querySelector(".message").textContent);
-document.querySelector(".message").textContent = "Correct Guess 🎉";
+// console.log(document.querySelector(".message").textContent);
 
-document.querySelector(".guess").value = 35;
-console.log(document.querySelector(".guess").value);
+// Using the assignment operator =, we can also change the content of the element
+// document.querySelector(".message").textContent = "Correct Guess 🎉";
+
+// document.querySelector(".guess").value = 35;
+// console.logx(document.querySelector(".guess").value);
+
+/* NOTE Event Listeners
+These are special functions that are used to associate a user activity with a
+sequence of instructions that are executed as a response
+
+event listeners are added using the addEventListener method
+*/
+
+document.querySelector(".check").addEventListener("click", function () {
+  // Any value/textContent we extract from DOM is always of type string, we need to
+  // convert it into the format we desire
+  let guess = Number(document.querySelector(".guess ").value);
+  console.log(guess);
+
+  if (!guess) {
+    document.querySelector(".message").textContent = "No Number Entered 🚫";
+  }
+});
