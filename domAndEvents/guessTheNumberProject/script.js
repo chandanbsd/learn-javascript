@@ -37,13 +37,60 @@ sequence of instructions that are executed as a response
 event listeners are added using the addEventListener method
 */
 
+/* NOTE Coding Challenge
+
+Implement a game rest functionality, so that the player can make a new guess!
+Your tasks:
+1. Select the element with the 'again' class and attach a click event handler
+2. In the handler function, restore initial values of the 'score' and
+'secretNumber' variables
+3. Restore the initial conditions of the message, number, score and guess input
+fields
+4. Also restore the original background color (#222) and number width (15rem)
+
+*/
+let targetNumber = Math.trunc(Math.random() * 100 + 1);
+console.log(targetNumber);
+let highScore = 0;
+let triesLeft = 0;
 document.querySelector(".check").addEventListener("click", function () {
   // Any value/textContent we extract from DOM is always of type string, we need to
   // convert it into the format we desire
   let guess = Number(document.querySelector(".guess ").value);
-  console.log(guess);
 
   if (!guess) {
     document.querySelector(".message").textContent = "No Number Entered 🚫";
+  } else {
+    let triesLeft = Number(document.querySelector(".score").textContent);
+
+    let guessedNumber = Number(document.querySelector(".guess").value);
+
+    if (targetNumber == guessedNumber) {
+      document.querySelector(".message").textContent = "Game Won 🎊";
+      document.querySelector("body").style.backgroundColor = "#60b347";
+      document.querySelector(".number").style.width = "15rem";
+      document.querySelector(".number").textContent = targetNumber;
+
+      // triesLeft = 5;
+    } else if (targetNumber > guessedNumber) {
+      document.querySelector(".message").textContent = "Guess Higher ⬆️";
+      triesLeft -= 1;
+    } else {
+      document.querySelector(".message").textContent = "Guess smaller ⬇️";
+      triesLeft -= 1;
+    }
+    document.querySelector(".score").textContent = triesLeft;
   }
+});
+
+document.querySelector(".again").addEventListener("click", function () {
+  targetNumber = Math.trunc(Math.random() * 100 + 1);
+  console.log(targetNumber);
+  triesLeft = 5;
+
+  document.querySelector(".message").textContent = "Start guessing...";
+  document.querySelector("body").style.backgroundColor = "#222";
+
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".score").textContent = "5";
 });
