@@ -53,6 +53,8 @@ let targetNumber = Math.trunc(Math.random() * 100 + 1);
 console.log(targetNumber);
 let highScore = 0;
 let triesLeft = 0;
+let currScore = 10;
+
 document.querySelector(".check").addEventListener("click", function () {
   // Any value/textContent we extract from DOM is always of type string, we need to
   // convert it into the format we desire
@@ -70,6 +72,16 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector("body").style.backgroundColor = "#60b347";
       document.querySelector(".number").style.width = "15rem";
       document.querySelector(".number").textContent = targetNumber;
+      triesLeft -= 1;
+      if (triesLeft == 4) {
+        currScore = 100;
+      } else if (triesLeft == 3) {
+        currScore = 50;
+      } else if (triesLeft == 2) {
+        currScore = 25;
+      } else {
+        currScore = 5;
+      }
 
       // triesLeft = 5;
     } else if (targetNumber > guessedNumber) {
@@ -80,6 +92,17 @@ document.querySelector(".check").addEventListener("click", function () {
       triesLeft -= 1;
     }
     document.querySelector(".score").textContent = triesLeft;
+
+    if (triesLeft == 0) {
+      document.querySelector(".message").textContent = "Game Lost 😭";
+      document.querySelector("body").style.backgroundColor = "red";
+      currScore = 0;
+    }
+
+    if (currScore > highScore) {
+      highScore = currScore;
+      document.querySelector(".highscore").textContent = highScore;
+    }
   }
 });
 
